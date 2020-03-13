@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>meng_pungi_sticks</defName>
+    <label>Punji Sticks</label>
+    <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. To boot the diseases that accumulate on the ends of the sticks promote plague in its victims.</description>
+    <thingClass>meng_pungi_sticks.meng_pungi_sticks_Building_TrapDamager</thingClass>
+    <graphicData>
+      <texPath>Things/punji_sticks_light</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0,0,1,0.15)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>2.5</Mass>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>200</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-5</Cleanliness>
+      <TrapMeleeDamage>50</TrapMeleeDamage>
+      <TrapSpringChance>1.0</TrapSpringChance>
+    </statBases>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <designationCategory>Security</designationCategory>
+    <designationHotKey>Misc6</designationHotKey>
+    <building>
+      <isTrap>true</isTrap>
+      <trapDestroyOnSpring>false</trapDestroyOnSpring>
+      <trapDamageCategory>Sharp</trapDamageCategory>
+      <expandHomeArea>false</expandHomeArea>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentTrap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <RulePackDef>
+    <defName>DamageEvent_TrapMengPunjiSticks</defName>
+    <include>
+      <li>DamageEvent_Include</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>damage_source->[punjisticks] jabbed</li>
+        <li>damage_source->[punjisticks] poked</li>
+        <li>damage_source->[punjisticks] stabbed</li>
+
+        <li>punjisticks(p=3)->a punji stick</li>
+        <li>punjisticks(p=3)->the punji stick trap</li>
+        <li>punjisticks->punji spikes</li>
+        <li>punjisticks->a sharp punji stick</li>
+        <li>punjisticks->a spiky trap</li>
+
+        <li>damaged_present->perforating</li>
+        <li>damaged_present->spearing</li>
+        <li>damaged_present->penetrating</li>
+        <li>damaged_present->jabbing into</li>
+        <li>damaged_present->slicing</li>
+
+        <li>destroyed_present->tearing apart</li>
+        <li>destroyed_present->shredding</li>
+        <li>destroyed_present->eviscerating</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>
