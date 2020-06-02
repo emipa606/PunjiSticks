@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	<meng_punji_sticks_PlagueSuccess>One of your Pungi Sticks has given {0} the Plague</meng_punji_sticks_PlagueSuccess>
+  <meng_punji_sticks_PlagueSuccess>One of your Pungi Sticks has given {0} the Plague</meng_punji_sticks_PlagueSuccess>
+  <meng_punji_sticks_PoisonSuccess>One of your Pungi Sticks has poisoned {0}</meng_punji_sticks_PoisonSuccess>
+
 </LanguageData>

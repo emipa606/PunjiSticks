@@ -7,6 +7,7 @@
     <tickerType>Normal</tickerType>
     <stealable>false</stealable>
     <minifiedDef>MinifiedThing</minifiedDef>
+    <designatorDropdown>PunjiSticksGroup</designatorDropdown>
     <thingCategories>
       <li>BuildingsSecurity</li>
     </thingCategories>
@@ -20,9 +21,6 @@
       <TrapMeleeDamage>50</TrapMeleeDamage>
       <TrapSpringChance>1.0</TrapSpringChance>
     </statBases>
-    <stuffCategories>
-      <li>Woody</li>
-    </stuffCategories>
     <costStuffCount>35</costStuffCount>
     <designationCategory>Security</designationCategory>
     <designationHotKey>Misc6</designationHotKey>
@@ -43,8 +41,29 @@
     <label>Punji Sticks Plague</label>
     <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. To boot the diseases that accumulate on the ends of the sticks promote plague in its victims.</description>
     <thingClass>meng_pungi_sticks.meng_pungi_sticks_Building_TrapDamager</thingClass>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
     <graphicData>
       <texPath>Things/punji_sticks_plague</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0,0,1,0.15)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="meng_pungi_base">
+    <defName>meng_pungi_sticks_poison</defName>
+    <label>Punji Sticks Poison</label>
+    <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. These have been coated in poison to make matters worse.</description>
+    <thingClass>meng_pungi_sticks.meng_pungi_sticks_poison_Building_TrapDamager</thingClass>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/punji_sticks_poison</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
