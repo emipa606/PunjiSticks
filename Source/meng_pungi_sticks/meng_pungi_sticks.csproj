@@ -44,9 +44,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="meng_pungi_sticks_anesthetic_Building_TrapDamager.cs" />
     <Compile Include="meng_pungi_sticks_poison_Building_TrapDamager.cs" />
     <Compile Include="meng_pungi_sticks_Building_TrapDamager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThingDef_meng_pungi_sticks_anesthetic.cs" />
     <Compile Include="ThingDef_meng_pungi_sticks_poison.cs" />
     <Compile Include="ThingDef_meng_pungi_sticks.cs" />
   </ItemGroup>

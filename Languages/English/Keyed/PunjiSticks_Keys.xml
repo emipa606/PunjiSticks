@@ -2,5 +2,5 @@
 <LanguageData>
   <meng_punji_sticks_PlagueSuccess>One of your Pungi Sticks has given {0} the Plague</meng_punji_sticks_PlagueSuccess>
   <meng_punji_sticks_PoisonSuccess>One of your Pungi Sticks has poisoned {0}</meng_punji_sticks_PoisonSuccess>
-
+  <meng_punji_sticks_anestheticSuccess>One of your Pungi Sticks has given {0} a dose of anesthetic</meng_punji_sticks_anestheticSuccess>
 </LanguageData>

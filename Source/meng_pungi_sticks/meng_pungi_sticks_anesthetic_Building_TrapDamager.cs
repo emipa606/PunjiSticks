@@ -5,7 +5,7 @@ using Verse.Sound;
 namespace meng_pungi_sticks
 {
     // Token: 0x02000003 RID: 3
-    internal class Meng_pungi_sticks_Building_TrapDamager : Building_TrapDamager
+    internal class Meng_pungi_sticks_anesthetic_Building_TrapDamager : Building_TrapDamager
 	{
 		// Token: 0x06000002 RID: 2 RVA: 0x00002058 File Offset: 0x00000258
 		private void SpringSubImpl(Pawn hitPawn)
@@ -29,13 +29,18 @@ namespace meng_pungi_sticks
 		}
 
 		// Token: 0x06000003 RID: 3 RVA: 0x00002108 File Offset: 0x00000308
-		private void RandomPlague(Pawn hitPawn)
+		private void Randomanesthetic(Pawn hitPawn)
         {
             if (Rand.Value > 0.25f)
             {
                 return;
             }
-            Messages.Message(TranslatorFormattedStringExtensions.Translate("meng_punji_sticks_PlagueSuccess", hitPawn.Label), new LookTargets(hitPawn), MessageTypeDefOf.PositiveEvent, false);
+            var anestheticHediffDef = DefDatabase<HediffDef>.GetNamedSilentFail("Hediff_AnestheticBullet");
+            if(anestheticHediffDef == null)
+            {
+                return;
+            }
+            Messages.Message(TranslatorFormattedStringExtensions.Translate("meng_punji_sticks_anestheticSuccess", hitPawn.Label), new LookTargets(hitPawn), MessageTypeDefOf.PositiveEvent, false);
             Hediff hediff;
             if (hitPawn == null)
             {
@@ -51,33 +56,34 @@ namespace meng_pungi_sticks
                 else
                 {
                     HediffSet hediffSet = health.hediffSet;
-                    hediff = hediffSet?.GetFirstHediffOfDef(HediffDefOf.Plague, false);
+                    hediff = hediffSet?.GetFirstHediffOfDef(anestheticHediffDef, false);
                 }
             }
             Hediff hediff2 = hediff;
-            var num = Rand.Range(0.1f, 0.2f);
+            var num = Rand.Range(0.5f, 0.8f);
             if (hediff2 != null)
             {
                 hediff2.Severity += num;
                 return;
             }
-            Hediff hediff3 = HediffMaker.MakeHediff(HediffDefOf.Plague, hitPawn, null);
+            Hediff hediff3 = HediffMaker.MakeHediff(anestheticHediffDef, hitPawn, null);
             hediff3.Severity = num;
             hitPawn.health.AddHediff(hediff3, null, null, null);
         }
 
         // Token: 0x06000004 RID: 4 RVA: 0x000021BC File Offset: 0x000003BC
         protected override void SpringSub(Pawn hitThing)
-		{
-			if (hitThing != null)
-			{
-				SpringSubImpl(hitThing);
-				RandomPlague(hitThing);
-			}
-		}
+        {
+            if (hitThing == null)
+            {
+                return;
+            }
+            SpringSubImpl(hitThing);
+            Randomanesthetic(hitThing);
+        }
 
-		// Token: 0x04000001 RID: 1
-		private static readonly FloatRange DamageRandomFactorRange = new FloatRange(0.8f, 1.2f);
+        // Token: 0x04000001 RID: 1
+        private static readonly FloatRange DamageRandomFactorRange = new FloatRange(0.2f, 0.5f);
 
 		// Token: 0x04000002 RID: 2
 		private static readonly float DamageCount = 5f;

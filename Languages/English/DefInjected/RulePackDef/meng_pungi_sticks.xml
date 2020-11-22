@@ -1,22 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.0>damage_source->[punjisticks] jabbed</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.0>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.1>damage_source->[punjisticks] poked</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.1>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.2>damage_source->[punjisticks] stabbed</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.2>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.3>punjisticks(p=3)->a punji stick</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.3>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.4>punjisticks(p=3)->the punji stick trap</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.4>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.5>punjisticks->punji spikes</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.5>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.6>punjisticks->a sharp punji stick</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.6>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.7>punjisticks->a spiky trap</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.7>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.8>damaged_present->perforating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.8>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.9>damaged_present->spearing</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.9>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.10>damaged_present->penetrating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.10>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.11>damaged_present->jabbing into</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.11>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.12>damaged_present->slicing</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.12>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.13>destroyed_present->tearing apart</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.13>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.14>destroyed_present->shredding</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.14>
-  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.15>destroyed_present->eviscerating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.15>
-
-
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.0>damage_source-&gt;[punjisticks] jabbed</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.0>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.1>damage_source-&gt;[punjisticks] poked</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.1>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.2>damage_source-&gt;[punjisticks] stabbed</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.2>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.3>punjisticks(p=3)-&gt;a punji stick</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.3>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.4>punjisticks(p=3)-&gt;the punji stick trap</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.4>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.5>punjisticks-&gt;punji spikes</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.5>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.6>punjisticks-&gt;a sharp punji stick</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.6>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.7>punjisticks-&gt;a spiky trap</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.7>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.8>damaged_present-&gt;perforating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.8>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.9>damaged_present-&gt;spearing</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.9>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.10>damaged_present-&gt;penetrating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.10>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.11>damaged_present-&gt;jabbing into</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.11>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.12>damaged_present-&gt;slicing</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.12>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.13>destroyed_present-&gt;tearing apart</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.13>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.14>destroyed_present-&gt;shredding</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.14>
+  <DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.15>destroyed_present-&gt;eviscerating</DamageEvent_TrapMengPunjiSticks.rulePack.rulesStrings.15>
 </LanguageData>
