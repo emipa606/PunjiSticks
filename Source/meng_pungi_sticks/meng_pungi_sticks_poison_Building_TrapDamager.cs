@@ -7,23 +7,32 @@ namespace meng_pungi_sticks
     // Token: 0x02000003 RID: 3
     internal class Meng_pungi_sticks_poison_Building_TrapDamager : Building_TrapDamager
     {
+        // Token: 0x04000001 RID: 1
+        private static readonly FloatRange DamageRandomFactorRange = new FloatRange(0.8f, 1.2f);
+
+        // Token: 0x04000002 RID: 2
+        private static readonly float DamageCount = 5f;
+
         // Token: 0x06000002 RID: 2 RVA: 0x00002058 File Offset: 0x00000258
         private void SpringSubImpl(Pawn hitPawn)
         {
-            SoundDefOf.TrapSpring.PlayOneShot(new TargetInfo(Position, Map, false));
-            var num = this.GetStatValue(StatDefOf.TrapMeleeDamage, true) * DamageRandomFactorRange.RandomInRange / DamageCount;
+            SoundDefOf.TrapSpring.PlayOneShot(new TargetInfo(Position, Map));
+            var num = this.GetStatValue(StatDefOf.TrapMeleeDamage) * DamageRandomFactorRange.RandomInRange /
+                      DamageCount;
             var armorPenetration = num * 0.015f;
             var num2 = 0;
             while (num2 < DamageCount)
             {
-                var dinfo = new DamageInfo(DamageDefOf.Stab, num, armorPenetration, -1f, this, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null);
-                DamageWorker.DamageResult damageResult = hitPawn.TakeDamage(dinfo);
+                var dinfo = new DamageInfo(DamageDefOf.Stab, num, armorPenetration, -1f, this);
+                var damageResult = hitPawn.TakeDamage(dinfo);
                 if (num2 == 0)
                 {
-                    var battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(hitPawn, MengRulePackDefOf.DamageEvent_TrapMengPunjiSticks, null);
+                    var battleLogEntry_DamageTaken =
+                        new BattleLogEntry_DamageTaken(hitPawn, MengRulePackDefOf.DamageEvent_TrapMengPunjiSticks);
                     Find.BattleLog.Add(battleLogEntry_DamageTaken);
                     damageResult.AssociateWithLog(battleLogEntry_DamageTaken);
                 }
+
                 num2++;
             }
         }
@@ -35,65 +44,58 @@ namespace meng_pungi_sticks
             {
                 return;
             }
-            Messages.Message(TranslatorFormattedStringExtensions.Translate("meng_punji_sticks_PoisonSuccess", hitPawn.Label), new LookTargets(hitPawn), MessageTypeDefOf.PositiveEvent, false);
+
+            Messages.Message("meng_punji_sticks_PoisonSuccess".Translate(hitPawn.Label), new LookTargets(hitPawn),
+                MessageTypeDefOf.PositiveEvent, false);
             Hediff hediff;
-            if (hitPawn == null)
+            var health = hitPawn.health;
+            if (health == null)
             {
                 hediff = null;
             }
             else
             {
-                Pawn_HealthTracker health = hitPawn.health;
-                if (health == null)
-                {
-                    hediff = null;
-                }
-                else
-                {
-                    HediffSet hediffSet = health.hediffSet;
-                    hediff = hediffSet?.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup, false);
-                }
+                var hediffSet = health.hediffSet;
+                hediff = hediffSet?.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup);
             }
-            Hediff hediff2 = hediff;
+
+            var hediff2 = hediff;
             var num = Rand.Range(0.1f, 0.2f);
             if (hediff2 != null)
             {
                 hediff2.Severity += num;
                 return;
             }
-            Hediff hediff3 = HediffMaker.MakeHediff(HediffDefOf.ToxicBuildup, hitPawn, null);
+
+            var hediff3 = HediffMaker.MakeHediff(HediffDefOf.ToxicBuildup, hitPawn);
             hediff3.Severity = num;
-            hitPawn.health.AddHediff(hediff3, null, null, null);
+            hitPawn.health.AddHediff(hediff3);
         }
 
         // Token: 0x06000004 RID: 4 RVA: 0x000021BC File Offset: 0x000003BC
         protected override void SpringSub(Pawn hitThing)
         {
-            if (hitThing != null)
+            if (hitThing == null)
             {
-                SpringSubImpl(hitThing);
-                RandomPoison(hitThing);
+                return;
             }
+
+            SpringSubImpl(hitThing);
+            RandomPoison(hitThing);
         }
-
-        // Token: 0x04000001 RID: 1
-        private static readonly FloatRange DamageRandomFactorRange = new FloatRange(0.8f, 1.2f);
-
-        // Token: 0x04000002 RID: 2
-        private static readonly float DamageCount = 5f;
 
         // Token: 0x02000004 RID: 4
         [DefOf]
         private static class MengRulePackDefOf
         {
+            // Token: 0x04000003 RID: 3
+            public static RulePackDef DamageEvent_TrapMengPunjiSticks;
+
             // Token: 0x06000007 RID: 7 RVA: 0x000021F7 File Offset: 0x000003F7
             static MengRulePackDefOf()
             {
-                DefOfHelper.EnsureInitializedInCtor(typeof(RulePackDef));
+                DefOfHelper.EnsureInitializedInCtor(typeof(RulePackDefOf));
             }
-
-            // Token: 0x04000003 RID: 3
-            public static RulePackDef DamageEvent_TrapMengPunjiSticks;
         }
     }
 }
