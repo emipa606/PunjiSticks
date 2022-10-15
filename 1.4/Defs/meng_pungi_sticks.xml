@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="meng_pungi_base" Abstract="True" ParentName="BuildingBase">
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designatorDropdown>PunjiSticksGroup</designatorDropdown>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>2.5</Mass>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>200</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-5</Cleanliness>
+      <TrapMeleeDamage>50</TrapMeleeDamage>
+      <TrapSpringChance>1.0</TrapSpringChance>
+    </statBases>
+    <costStuffCount>35</costStuffCount>
+    <designationCategory>Security</designationCategory>
+    <designationHotKey>Misc6</designationHotKey>
+    <building>
+      <isTrap>true</isTrap>
+      <trapDestroyOnSpring>false</trapDestroyOnSpring>
+      <trapDamageCategory>Sharp</trapDamageCategory>
+      <expandHomeArea>false</expandHomeArea>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentTrap</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="meng_pungi_base">
+    <defName>meng_pungi_sticks</defName>
+    <label>Punji Sticks Plague</label>
+    <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. To boot the diseases that accumulate on the ends of the sticks promote plague in its victims.</description>
+    <thingClass>meng_pungi_sticks.Meng_pungi_sticks_Building_TrapDamager</thingClass>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/punji_sticks_plague</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0,0,1,0.15)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="meng_pungi_base">
+    <defName>meng_pungi_sticks_poison</defName>
+    <label>Punji Sticks Poison</label>
+    <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. These have been coated in poison to make matters worse.</description>
+    <thingClass>meng_pungi_sticks.Meng_pungi_sticks_poison_Building_TrapDamager</thingClass>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/punji_sticks_poison</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0,0,1,0.15)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+  <RulePackDef>
+    <defName>DamageEvent_TrapMengPunjiSticks</defName>
+    <include>
+      <li>DamageEvent_Include</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>damage_source-&gt;[punjisticks] jabbed</li>
+        <li>damage_source-&gt;[punjisticks] poked</li>
+        <li>damage_source-&gt;[punjisticks] stabbed</li>
+        <li>punjisticks(p=3)-&gt;a punji stick</li>
+        <li>punjisticks(p=3)-&gt;the punji stick trap</li>
+        <li>punjisticks-&gt;punji spikes</li>
+        <li>punjisticks-&gt;a sharp punji stick</li>
+        <li>punjisticks-&gt;a spiky trap</li>
+        <li>damaged_present-&gt;perforating</li>
+        <li>damaged_present-&gt;spearing</li>
+        <li>damaged_present-&gt;penetrating</li>
+        <li>damaged_present-&gt;jabbing into</li>
+        <li>damaged_present-&gt;slicing</li>
+        <li>destroyed_present-&gt;tearing apart</li>
+        <li>destroyed_present-&gt;shredding</li>
+        <li>destroyed_present-&gt;eviscerating</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>
