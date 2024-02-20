@@ -1,5 +1,9 @@
 # Changelog for PunjiSticks
 
+1.4.2 - Only organic pawns should now get infected by the traps
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 
