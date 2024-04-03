@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/HediffDef[defName="Hediff_AnestheticBullet"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="meng_pungi_base">
+          <defName>meng_pungi_sticks_anesthetic</defName>
+          <label>Punji Sticks Anesthetic</label>
+          <description>Punji Sticks are a classic example of a spike trap, which look a little more realistic vs the original spike trap. These have been coated in an anesthetic reagent to make matters worse.</description>
+          <thingClass>meng_pungi_sticks.Meng_pungi_sticks_anesthetic_Building_TrapDamager</thingClass>
+          <costStuffCount>35</costStuffCount>
+          <stuffCategories>
+            <li>Woody</li>
+          </stuffCategories>
+          <graphicData>
+            <texPath>Things/punji_sticks_anesthetic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <damageData>
+              <rect>(0,0,1,0.15)</rect>
+            </damageData>
+          </graphicData>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+</Patch>
