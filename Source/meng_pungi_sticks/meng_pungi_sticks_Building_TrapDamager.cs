@@ -5,9 +5,9 @@ namespace meng_pungi_sticks;
 
 internal class Meng_pungi_sticks_Building_TrapDamager : Meng_pungi_sticks_BaseBuilding_TrapDamager
 {
-    private static readonly FloatRange DamageRandomFactorRange = new FloatRange(0.8f, 1.2f);
+    private static readonly FloatRange damageRandomFactorRange = new(0.8f, 1.2f);
 
-    private void RandomPlague(Pawn hitPawn)
+    private static void randomPlague(Pawn hitPawn)
     {
         if (hitPawn.RaceProps?.IsFlesh != true || Rand.Value > 0.25f)
         {
@@ -48,7 +48,7 @@ internal class Meng_pungi_sticks_Building_TrapDamager : Meng_pungi_sticks_BaseBu
             return;
         }
 
-        SpringSubImpl(hitThing, DamageRandomFactorRange);
-        RandomPlague(hitThing);
+        SpringSubImpl(hitThing, damageRandomFactorRange);
+        randomPlague(hitThing);
     }
 }

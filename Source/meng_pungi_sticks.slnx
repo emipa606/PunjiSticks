@@ -1,0 +1,6 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="meng_pungi_sticks/meng_pungi_sticks.csproj" />
+</Solution>

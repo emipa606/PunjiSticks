@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>f457ef83-f9c2-4c6a-9040-c9cf32fc9480</ID>
   <ModName>Punji Sticks (Continued)</ModName>
-  <Version>1.5.0</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

@@ -17,14 +17,13 @@ internal class Meng_pungi_sticks_BaseBuilding_TrapDamager : Building_TrapDamager
         var num2 = 0;
         while (num2 < DamageCount)
         {
-            var dinfo = new DamageInfo(DamageDefOf.Stab, num, armorPenetration, -1f, this);
-            var damageResult = hitPawn.TakeDamage(dinfo);
+            var damageResult = hitPawn.TakeDamage(new DamageInfo(DamageDefOf.Stab, num, armorPenetration, -1f, this));
             if (num2 == 0)
             {
-                var battleLogEntry_DamageTaken =
+                var battleLogEntryDamageTaken =
                     new BattleLogEntry_DamageTaken(hitPawn, MengRulePackDefOf.DamageEvent_TrapMengPunjiSticks);
-                Find.BattleLog.Add(battleLogEntry_DamageTaken);
-                damageResult.AssociateWithLog(battleLogEntry_DamageTaken);
+                Find.BattleLog.Add(battleLogEntryDamageTaken);
+                damageResult.AssociateWithLog(battleLogEntryDamageTaken);
             }
 
             num2++;
