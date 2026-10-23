@@ -3,4 +3,20 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="meng_pungi_sticks/meng_pungi_sticks.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/anesthetic_patch.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/">
+    <File Path="../1.7/Defs/designator_group.xml" />
+    <File Path="../1.7/Defs/meng_pungi_sticks.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/PunjiSticks_Keys.xml" />
+  </Folder>
 </Solution>

@@ -41,14 +41,14 @@ internal class Meng_pungi_sticks_poison_Building_TrapDamager : Meng_pungi_sticks
         hitPawn.health.AddHediff(hediff3);
     }
 
-    protected override void SpringSub(Pawn hitThing)
+    protected override void SpringSub(Pawn p)
     {
-        if (hitThing == null)
+        if (p == null)
         {
             return;
         }
 
-        SpringSubImpl(hitThing, damageRandomFactorRange);
-        randomPoison(hitThing);
+        SpringSubImpl(p, damageRandomFactorRange);
+        randomPoison(p);
     }
 }
